@@ -3,20 +3,22 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Product, products } from '../products';
 
+import { CartService } from '../cart.service';
+
 @Component({
-  selector: 'app-product-details',
-  templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.css'],
+    selector: 'app-product-details',
+    templateUrl: './product-details.component.html',
+    styleUrls: ['./product-details.component.css'],
 })
 export class ProductDetailsComponent implements OnInit {
-  product: Product | undefined;
+    product: Product | undefined;
 
-  constructor(private route: ActivatedRoute) {}
+    constructor(private route: ActivatedRoute, private cartService: CartService) {}
 
-  ngOnInit(): void {
-    const paramMap = this.route.snapshot.paramMap;
-    const productId = Number(paramMap.get('productId'));
+    ngOnInit(): void {
+        const paramMap = this.route.snapshot.paramMap;
+        const productId = Number(paramMap.get('productId'));
 
-    this.product = products.find(p => p.id === productId);
-  }
+        this.product = products.find((p) => p.id === productId);
+    }
 }
