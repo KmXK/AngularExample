@@ -9,11 +9,20 @@ import { CartService } from '../cart.service';
     selector: 'app-product-details',
     templateUrl: './product-details.component.html',
     styleUrls: ['./product-details.component.css'],
-})
-export class ProductDetailsComponent implements OnInit {
-    product: Product | undefined;
 
-    constructor(private route: ActivatedRoute, private cartService: CartService) {}
+
+
+  })
+export class 
+ProductDetailsComponent implements OnInit {
+    product:
+     Product | undefined;
+
+    constructor(
+        private route: ActivatedRoute,
+
+        private cartService: CartService
+    ) {}
 
     ngOnInit(): void {
         const paramMap = this.route.snapshot.paramMap;
