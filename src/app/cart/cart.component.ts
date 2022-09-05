@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { CartService } from "../cart.service";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
     selector: "app-cart",
@@ -9,7 +10,10 @@ import { CartService } from "../cart.service";
 export class CartComponent implements OnInit {
     items = this.cartService.getItems();
 
-    constructor(private cartService: CartService) {}
+    constructor(
+        private cartService: CartService,
+        private httpClient: HttpClient
+    ) {}
 
     ngOnInit(): void {}
 }
